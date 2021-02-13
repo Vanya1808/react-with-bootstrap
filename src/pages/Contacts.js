@@ -5,13 +5,20 @@ import link from "../images/icons/linkedin.png";
 import disc from "../images/icons/discord.png";
 import classes from "./Contacts.module.css";
 
+// import {  } from "../components/hoc/withLog";
+import TestComponent from "../components/TestComponent";
+
 function Contacts() {
   return (
     <>
+      <TestComponent a='Ivan'/>
       <h2>Contacts</h2>;
       <address>
         <span>
-          <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D0%B5%D0%B2" className={classes.a}>
+          <a
+            href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D0%B5%D0%B2"
+            className={classes.a}
+          >
             Kiev, Ukrane, UA
           </a>
         </span>
@@ -22,7 +29,7 @@ function Contacts() {
         </span>
         <span>
           <a href="mailto:Vanya.Goudz@gmail.com" className={classes.a}>
-           Vanya.Goudz@gmail.com
+            Vanya.Goudz@gmail.com
           </a>
         </span>
       </address>
