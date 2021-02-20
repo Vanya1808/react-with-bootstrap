@@ -1,21 +1,22 @@
-import React, { component } from "react";
+import React, { Component } from "react";
 
 const asyncComponent = (loader) => {
-    return class AsyncComponent extends component {
-        state = {
-            // component: 
-        };
-        componentDidMount() {
-            loader().then((module)=> {
-              this.setState({ component: module.default});
-            });
-        };
+  return class asyncComponent extends Component {
+    state = {
+      component: "null",
+    };
 
-        render() {
-            const { component: LoadedComponent } = this.state
-            return
-        };
-};
+    componentDidMount() {
+      loader().then((module) => {
+        this.setState({ component: module.default });
+      });
+    }
+
+    render() {
+      const { component: LoadedComponent } = this.state;
+      return LoadedComponent && <LoadedComponent />;
+    }
+  };
 };
 
 export default asyncComponent;

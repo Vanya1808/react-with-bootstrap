@@ -1,19 +1,18 @@
-import React, {Component} from 'react'
+import React, { Component } from "react";
 
 export default class Toggler extends Component {
-    state = {
-        isOpen: false,
-    };
+  state = {
+    isOpen: false,
+  };
 
-    toggle = () => {
-        this.state((state)=>({isOpen: !state.isOpen}));
-    };
+  toggle = () => {
+    this.setState((state) => ({ isOpen: !state.isOpen }));
+  };
 
-    render() {
-        return(
-            return this.props.children({
-            isOpen: this.state.isOpen 
-            })
-        )
-    }
+  render() {
+    return this.props.children({
+      isOpen: this.state.isOpen,
+      onToggle: this.toggle,
+    });
+  }
 }

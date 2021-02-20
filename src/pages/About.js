@@ -1,11 +1,13 @@
 import React from "react";
 import Jumbo from "../components/Jumbotron";
 import { Container, Table } from "react-bootstrap";
+import withAuthContext from "../components/hoc/withAuthContext";
 
-function About() {
+function About({auth}) {
   return (
     <>
-      <h2>About</h2>
+       {auth.user ? <h2>About {auth.user.name}</h2> : <h2>About </h2>}
+      <h2>About {auth.user.name}</h2>
       <Jumbo />
       <Container>
         <h2>How long do you code every day?</h2>
@@ -50,4 +52,4 @@ function About() {
   );
 }
 
-export default About;
+export default withAuthContext(About);

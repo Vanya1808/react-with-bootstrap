@@ -6,6 +6,8 @@ import Navigation from "./components/Navigation";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
 import routes from "./routes";
+import AuthContext from './context/Auth'
+
 
 class App extends Component {
   render() {
@@ -22,6 +24,7 @@ class App extends Component {
           </Suspense>
         </BrowserRouter>
         <Footer />
+        <AuthContext />
       </>
     );
   }
